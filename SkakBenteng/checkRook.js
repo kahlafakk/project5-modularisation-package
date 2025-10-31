@@ -2,7 +2,6 @@ export function cekSkak(board) {
   let kingPos = null;
   let rookPos = null;
 
-  // Cari posisi Raja dan Benteng
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
       if (board[i][j] === "K") kingPos = [i, j];
@@ -19,7 +18,6 @@ export function cekSkak(board) {
   const rr = rookPos[0];
   const rc = rookPos[1];
 
-  // Cek horizontal (baris sama)
   if (kr === rr) {
     let blocked = false;
     if (kc < rc) {
@@ -34,7 +32,6 @@ export function cekSkak(board) {
     if (!blocked) return "SKAK!";
   }
 
-  // Cek vertical (kolom sama)
   if (kc === rc) {
     let blocked = false;
     if (kr < rr) {
